@@ -2,10 +2,12 @@
   "name": "com.open-mux.open-mux-client",
   "displayName": "Open MUX Client",
   "description": "Transforms your project into an Open MUX networking client.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "Open MUX",
     "url": "https://github.com/open-mux"
   },
-  "dependencies": {}
+  "dependencies": {
+    "com.endel.nativewebsocket": "1.1.4"
+  }
 }
