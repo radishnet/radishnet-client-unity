@@ -14,7 +14,9 @@ A Unity package that transforms your project into an Open MUX networking client.
 
 ## Configuring your scene
 1. Drag the `Networking System` from `Packages/Open MUX Client/Runtime/Prefabs` into the root of your scene
-2. Drag the GameObject that represents your Player to the `Player` slot in the `Player State Sender` script (which should be one of the scripts in the newly created `Networking System` GameObject)
-3. Configure the server address and port settings in the `OpenMUXConfiguration` asset, which should be in your `Assets` folder.
-4. Make sure your server is started
-5. Start the scene. The application should now automatically connect to the server and start logging some messages.
+2. Drag the GameObject that represents your Player (or create a new 3D object in the scene such as a sphere) to the `Player` slot in the `Player State Sender` script (which should be one of the scripts in the newly created `Networking System` GameObject)
+3. Create a Configuration Asset by right-clicking on `Assets` and going to `Create` -> `OpenMUX` -> `Configuration Asset`
+4. Configure the Server IP and Port in the `OpenMUXConfiguration` asset, which should now be in your `Assets` folder. If you host the server on the same computer as your client, use `localhost` as the ServerIP. If you haven't changed it, the port is probably `3000`
+5. Drag this `OpenMUXConfiguration` asset to the `Open Mux Configuration` slot in the `Web Socket Client` script (which should be in the Networking System)
+6. Make sure your server is started
+7. Start the scene. The application should now automatically connect to the server and start logging some messages

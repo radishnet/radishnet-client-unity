@@ -8,13 +8,13 @@ namespace OpenMUX.Networking
 {
     public class WebSocketClient : MonoBehaviour
     {
-	    [SerializeField] private OpenMuxConfiguration appConfiguration;
+	    [SerializeField] private OpenMuxConfiguration openMuxConfiguration;
 	    [SerializeField] private ReceivedMessageProcessor receivedMessageProcessor;
         private WebSocket webSocket;
 
         private async void Start()
         {
-            var serverAddress = $"ws://{appConfiguration.serverIP}:{appConfiguration.serverPort}";
+            var serverAddress = $"ws://{openMuxConfiguration.serverIP}:{openMuxConfiguration.serverPort}";
             Debug.Log($"Connecting to server at {serverAddress}.", this);
             webSocket = new WebSocket(serverAddress);
             webSocket.OnOpen += OnWebSocketOpen;
