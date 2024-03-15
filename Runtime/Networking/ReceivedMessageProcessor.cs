@@ -18,15 +18,15 @@ namespace OpenMUX.Networking
                     var worldStateMessage = JsonUtility.FromJson<WorldStateMessage>(messageInJson);
                     var worldInfo = worldStateMessage.payload.worldInfo;
                     var playerStates = worldStateMessage.payload.playerStates;
-                    // foreach (var playerState in playerStates)
-                    // {
-                    //     Debug.Log("Received player state: " + JsonUtility.ToJson(playerState));
-                    // }
-                    // var objectStates = worldStateMessage.payload.objectStates;
-                    // foreach (var objectState in objectStates)
-                    // {
-                    //     Debug.Log("Received object state: " + JsonUtility.ToJson(objectState));
-                    // }
+                    foreach (var playerState in playerStates)
+                    {
+                        Debug.Log("Received player state: " + JsonUtility.ToJson(playerState));
+                    }
+                    var objectStates = worldStateMessage.payload.objectStates;
+                    foreach (var objectState in objectStates)
+                    {
+                        Debug.Log("Received object state: " + JsonUtility.ToJson(objectState));
+                    }
                     break;
                 case "PlayerIdMessage":
                     var playerIdMessage = JsonUtility.FromJson<PlayerIdMessage>(messageInJson);
