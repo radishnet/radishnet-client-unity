@@ -1,0 +1,7 @@
+﻿{
+  "name": "com.open-mux.open-mux-client",
+  "displayName": "Open MUX Client",
+  "description": "Transforms your project into an Open MUX networking client.",
+  "version": "0.1.0",
+  "dependencies": {}
+}
