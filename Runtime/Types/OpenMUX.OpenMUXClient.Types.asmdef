@@ -1,10 +1,7 @@
 {
-    "name": "OpenMUX.OpenMUXClient",
-    "rootNamespace": "OpenMUX",
-    "references": [
-        "GUID:04376767bc1f3b428aefa3d20743e819",
-        "GUID:304a2c43ee574194ca0be78315737d51"
-    ],
+    "name": "OpenMUX.OpenMUXClient.Types",
+    "rootNamespace": "",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
