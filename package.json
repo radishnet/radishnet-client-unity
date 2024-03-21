@@ -2,12 +2,24 @@
   "name": "com.open-mux.open-mux-client",
   "displayName": "Open MUX Client",
   "description": "Transforms your project into an Open MUX networking client.\n\n \u25AA WARNING: Please first install the Native WebSockets package! Read the instructions on GitHub.\n",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": {
     "name": "Open MUX",
     "url": "https://github.com/open-mux"
   },
   "dependencies": {
     "com.endel.nativewebsocket": "1.1.4"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Basic Networking Setup",
+      "description": "A pre-configured Networking System that can be easily drag-and-dropped into your scene.",
+      "path": "Samples~/BasicNetworkingSetup"
+    },
+    {
+      "displayName": "Basic Player Prefab",
+      "description": "A very basic player prefab if you don't have one already.",
+      "path": "Samples~/BasicPlayerPrefab"
+    }
+  ]
 }

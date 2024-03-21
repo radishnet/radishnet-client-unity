@@ -1,42 +1,52 @@
-﻿using OpenMUX.Types.ServerToClientMessages;
+﻿using System.Collections.Generic;
+using OpenMUX.Types;
+using OpenMUX.Types.ServerToClientMessages;
 using UnityEngine;
 
 namespace OpenMUX.Networking
 {
     public class ReceivedMessageProcessor : MonoBehaviour
     {
-        [SerializeField] private PlayerStateSender playerStateSender;
+        [SerializeField] private StateSender stateSender;
 
         public void ProcessMessage(byte[] messageInBytes)
         {
             var messageInJson = System.Text.Encoding.UTF8.GetString(messageInBytes);
             var baseMessage = JsonUtility.FromJson<ServerToClientMessage<Object>>(messageInJson);
-
             switch (baseMessage.type)
             {
                 case "WorldStateMessage":
                     var worldStateMessage = JsonUtility.FromJson<WorldStateMessage>(messageInJson);
-                    var worldInfo = worldStateMessage.payload.worldInfo;
-                    var playerStates = worldStateMessage.payload.playerStates;
-                    foreach (var playerState in playerStates)
-                    {
-                        Debug.Log("Received player state: " + JsonUtility.ToJson(playerState));
-                    }
-                    var objectStates = worldStateMessage.payload.objectStates;
-                    foreach (var objectState in objectStates)
-                    {
-                        Debug.Log("Received object state: " + JsonUtility.ToJson(objectState));
-                    }
+                    ProcessWorldInfo(worldStateMessage.payload.worldInfo);
+                    ProcessPlayerStates(worldStateMessage.payload.playerStates);
                     break;
                 case "ClientIdMessage":
                     var clientIdMessage = JsonUtility.FromJson<ClientIdMessage>(messageInJson);
-                    Debug.Log($"Received client id: {clientIdMessage.payload}");
-                    playerStateSender.SetClientId(clientIdMessage.payload);
+                    ProcessClientId(clientIdMessage.payload);
                     break;
                 default:
                     Debug.LogWarning("Unknown message type: " + baseMessage.type);
                     break;
             }
+        }
+
+        private void ProcessWorldInfo(WorldInfo worldInfo)
+        {
+            // Debug.Log(JsonUtility.ToJson(worldInfo));
+        }
+
+        private void ProcessPlayerStates(IEnumerable<PlayerState> playerStates)
+        {
+            foreach (var playerState in playerStates)
+            {
+                Debug.Log("Received player state: " + JsonUtility.ToJson(playerState));
+            }
+        }
+
+        private void ProcessClientId(string clientId)
+        {
+            Debug.Log($"Received client id: {clientId}");
+            stateSender.SetClientId(clientId);
         }
     }
 }

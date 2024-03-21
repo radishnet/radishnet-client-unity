@@ -7,13 +7,11 @@ namespace OpenMUX.Types
     {
         public WorldInfo worldInfo;
         public PlayerState[] playerStates;
-        public ObjectState[] objectStates;
 
-        public WorldState(WorldInfo worldInfo, PlayerState[] playerStates, ObjectState[] objectStates)
+        public WorldState(WorldInfo worldInfo, PlayerState[] playerStates)
         {
             this.worldInfo = worldInfo;
             this.playerStates = playerStates;
-            this.objectStates = objectStates;
         }
     }
 }
