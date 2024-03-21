@@ -12,7 +12,7 @@ namespace OpenMUX.Networking
         [SerializeField] private int serverPort = 3000;
         [SerializeField] private ReceivedMessageProcessor receivedMessageProcessor;
 
-        private async void Start()
+        private void Start()
         {
             var serverAddress = $"ws://{serverIP}:{serverPort}/?clientType=vr";
             Debug.Log($"Connecting to server at {serverAddress}.", this);
@@ -21,7 +21,7 @@ namespace OpenMUX.Networking
             webSocket.OnMessage += OnWebSocketMessage;
             webSocket.OnError += OnWebSocketError;
             webSocket.OnClose += OnWebSocketClose;
-            await webSocket.Connect();
+            webSocket.Connect();
         }
 
 		private void OnWebSocketOpen()
@@ -34,14 +34,14 @@ namespace OpenMUX.Networking
 			receivedMessageProcessor.ProcessMessage(message);
 		}
 
-		private static void OnWebSocketError(string errorMessage)
+		private void OnWebSocketError(string errorMessage)
 		{
-			Debug.Log("Received error: " + errorMessage);
+			Debug.LogError("Received error: " + errorMessage, this);
 		}
 
-		private static void OnWebSocketClose(WebSocketCloseCode closeCode)
+		private void OnWebSocketClose(WebSocketCloseCode closeCode)
 		{
-			Debug.Log("Connection closed with code: " + closeCode);
+			Debug.Log("Connection closed with code: " + closeCode, this);
 		}
 
 		public async void SendMessageToServer<T>(ClientToServerMessage<T> message)
