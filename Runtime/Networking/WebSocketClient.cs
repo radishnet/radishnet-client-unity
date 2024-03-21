@@ -1,6 +1,5 @@
 using System.Linq;
 using NativeWebSocket;
-using OpenMUX.Configuration;
 using OpenMUX.Types.ClientToServerMessages;
 using UnityEngine;
 
@@ -8,13 +7,14 @@ namespace OpenMUX.Networking
 {
     public class WebSocketClient : MonoBehaviour
     {
-	    [SerializeField] private OpenMuxConfiguration openMuxConfiguration;
-	    [SerializeField] private ReceivedMessageProcessor receivedMessageProcessor;
         private WebSocket webSocket;
+        [SerializeField] private string serverIP = "localhost";
+        [SerializeField] private int serverPort = 3000;
+        [SerializeField] private ReceivedMessageProcessor receivedMessageProcessor;
 
         private async void Start()
         {
-            var serverAddress = $"ws://{openMuxConfiguration.serverIP}:{openMuxConfiguration.serverPort}";
+            var serverAddress = $"ws://{serverIP}:{serverPort}/?clientType=vr";
             Debug.Log($"Connecting to server at {serverAddress}.", this);
             webSocket = new WebSocket(serverAddress);
             webSocket.OnOpen += OnWebSocketOpen;
