@@ -28,11 +28,6 @@ namespace OpenMUX.Networking
                         Debug.Log("Received object state: " + JsonUtility.ToJson(objectState));
                     }
                     break;
-                case "PlayerIdMessage":
-                    var playerIdMessage = JsonUtility.FromJson<PlayerIdMessage>(messageInJson);
-                    Debug.Log($"Received player id: {playerIdMessage.payload}");
-                    playerStateSender.SetPlayerId(playerIdMessage.payload);
-                    break;
                 default:
                     Debug.LogWarning("Unknown message type: " + baseMessage.type);
                     break;
