@@ -2,7 +2,7 @@
   "name": "com.open-mux.open-mux-client",
   "displayName": "Open MUX Client",
   "description": "Transforms your project into an Open MUX networking client.\n\n \u25AA WARNING: Please first install the Native WebSockets package! Read the instructions on GitHub.\n",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "author": {
     "name": "Open MUX",
     "url": "https://github.com/open-mux"

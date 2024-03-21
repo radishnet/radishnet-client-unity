@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 808465109344396161}
   - component: {fileID: 6532947920986889600}
-  - component: {fileID: 3209934089997786423}
   - component: {fileID: 6165051291399495312}
+  - component: {fileID: 3209934089997786423}
   m_Layer: 0
   m_Name: Networking System
   m_TagString: Untagged
@@ -46,21 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeaf3441e912a8143b7ba66828527919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appConfiguration: {fileID: 11400000, guid: 02e24b8da3d021047b58d0bca15a26ec, type: 2}
+  serverIP: localhost
+  serverPort: 3000
   receivedMessageProcessor: {fileID: 3209934089997786423}
---- !u!114 &3209934089997786423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8641637509180689966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27cdb77dc09540089ec5478dd4820f31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStateSender: {fileID: 6165051291399495312}
 --- !u!114 &6165051291399495312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,3 +63,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   webSocketClient: {fileID: 6532947920986889600}
   player: {fileID: 0}
+--- !u!114 &3209934089997786423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8641637509180689966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cdb77dc09540089ec5478dd4820f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStateSender: {fileID: 6165051291399495312}

@@ -7,19 +7,31 @@ namespace OpenMUX.Networking
     public class PlayerStateSender : MonoBehaviour
     {
         [SerializeField] private WebSocketClient webSocketClient;
-        [SerializeField] private GameObject player;
+        [SerializeField] private GameObject playerGameObject;
+        private string clientId;
+
+        private void Start()
+        {
+            clientId = "";
+        }
 
         private void Update()
         {
-            if (player == null) return;
+            if (playerGameObject == null) return;
+            if (clientId == "") return;
             SendPlayerStateToServer();
         }
 
         private void SendPlayerStateToServer()
         {
-            var playerState = new PlayerState("", player.transform.position, player.transform.rotation);
+            var playerState = new PlayerState(clientId, playerGameObject.transform.position, playerGameObject.transform.rotation);
             var playerStateMessage = new PlayerStateMessage(playerState);
             webSocketClient.SendMessageToServer(playerStateMessage);
+        }
+
+        public void SetClientId(string newClientId)
+        {
+            clientId = newClientId;
         }
     }
 }
