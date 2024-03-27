@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenMUX.Types
+namespace RadishNet.Types
 {
     [Serializable]
     public class PlayerState

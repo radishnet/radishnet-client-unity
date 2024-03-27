@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenMUX.Types.ServerToClientMessages
+namespace RadishNet.Types.ServerToClientMessages
 {
     [Serializable]
     public class ServerToClientMessage<T>

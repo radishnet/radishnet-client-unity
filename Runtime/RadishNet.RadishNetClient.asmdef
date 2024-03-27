@@ -1,9 +1,8 @@
 {
-    "name": "OpenMUX.OpenMUXClient",
-    "rootNamespace": "OpenMUX",
+    "name": "RadishNet.RadishNetClient",
+    "rootNamespace": "RadishNet",
     "references": [
-        "GUID:04376767bc1f3b428aefa3d20743e819",
-        "GUID:304a2c43ee574194ca0be78315737d51"
+        "GUID:04376767bc1f3b428aefa3d20743e819"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace OpenMUX.Types
+namespace RadishNet.Types
 {
     [Serializable]
     public class NetworkObject

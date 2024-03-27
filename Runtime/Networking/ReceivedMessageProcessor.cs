@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using OpenMUX.Types;
-using OpenMUX.Types.ServerToClientMessages;
+using RadishNet.Types;
+using RadishNet.Types.ServerToClientMessages;
 using UnityEngine;
 
-namespace OpenMUX.Networking
+namespace RadishNet.Networking
 {
     public class ReceivedMessageProcessor : MonoBehaviour
     {

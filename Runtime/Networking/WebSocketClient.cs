@@ -1,9 +1,9 @@
 using System.Linq;
 using NativeWebSocket;
-using OpenMUX.Types.ClientToServerMessages;
+using RadishNet.Types.ClientToServerMessages;
 using UnityEngine;
 
-namespace OpenMUX.Networking
+namespace RadishNet.Networking
 {
     public class WebSocketClient : MonoBehaviour
     {

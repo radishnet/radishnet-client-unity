@@ -1,11 +1,11 @@
 ﻿{
-  "name": "com.open-mux.open-mux-client",
-  "displayName": "Open MUX Client",
-  "description": "Transforms your project into an Open MUX networking client.\n\n \u25AA WARNING: Please first install the Native WebSockets package! Read the instructions on GitHub.\n",
-  "version": "0.4.1",
+  "name": "com.radishnet.radishnet-client-unity",
+  "displayName": "RadishNet Client",
+  "description": "Transforms your project into a RadishNet networking client.\n\n \u25AA WARNING: Please first install the Native WebSockets package! Read the instructions on GitHub.\n",
+  "version": "0.5.0",
   "author": {
-    "name": "Open MUX",
-    "url": "https://github.com/open-mux"
+    "name": "RadishNet",
+    "url": "https://github.com/radishnet/"
   },
   "dependencies": {
     "com.endel.nativewebsocket": "1.1.4"
